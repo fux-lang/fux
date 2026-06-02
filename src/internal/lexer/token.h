@@ -2,8 +2,10 @@
 #define _INTERNAL_LEXER_TOKEN_H
 
 #include <stddef.h>
+#include <string.h>
 
-#include "src/internal/lexer/token_type.h"
+#include "token_type.h"
+#include "../../tools/list.h"
 
 #define TL_DEFAULT_CAPACITY 1
 #define TL_RESIZE_COEFF 2

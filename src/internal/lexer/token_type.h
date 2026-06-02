@@ -6,6 +6,8 @@ enum token_type;
 const char *token_type_to_string(enum token_type type);
 
 enum token_type {
+        ERR,
+        
         IDENTIFIER,
 
         HEX_LITERAL,
@@ -22,17 +24,13 @@ enum token_type {
         DEFER,
         ELSE,
         ENUM,
-        FN,
         FOR,
         IF,
         IMPORT,
-        INTERFACE,
         MATCH,
         PACKAGE,
         RETURN,
         STRUCT,
-        TYPE,
-        VAR,
 
         PLUS, // +
         PLUSEQ, // +=
@@ -56,6 +54,15 @@ enum token_type {
         LT, // <
         LTEQ, // <=
 
+        SHL, // <<
+        SHLEQ, // <<=
+        USHL, // <<<
+        USHLEQ, // <<<=
+        SHR, // >>
+        SHREQ, // >>=
+        USHR, // >>>
+        USHREQ, // >>>=
+
         AND, // &&
         OR, // ||
         NOT, // !
@@ -63,7 +70,7 @@ enum token_type {
         AMP, // &
         AMPEQ, // &=
         PIPE, // |
-        PIPEQ, // |=
+        PIPEEQ, // |=
         TILDA, // ~
         TILDAEQ, // ~=
         XOR, // ^
@@ -91,7 +98,7 @@ enum token_type {
         LBRACE, // {
         RBRACE, // }
 
-        EOF
+        _EOF
 };
 
 #endif // _INTERNAL_LEXER_TOKEN_TYPE_H

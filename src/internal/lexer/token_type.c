@@ -1,7 +1,9 @@
-#include "src/internal/lexer/token_type.h"
+#include "token_type.h"
 
 const char *token_type_to_string(enum token_type type) {
         switch (type) {
+                case ERR: return "ERR";
+
                 case IDENTIFIER: return "IDENTIFIER";
                 
                 case HEX_LITERAL: return "HEX_LITERAL";
@@ -18,17 +20,13 @@ const char *token_type_to_string(enum token_type type) {
                 case DEFER: return "DEFER";
                 case ELSE: return "ELSE";
                 case ENUM: return "ENUM";
-                case FN: return "FN";
                 case FOR: return "FOR";
                 case IF: return "IF";
                 case IMPORT: return "IMPORT";
-                case INTERFACE: return "INTERFACE";
                 case MATCH: return "MATCH";
                 case PACKAGE: return "PACKAGE";
                 case RETURN: return "RETURN";
                 case STRUCT: return "STRUCT";
-                case TYPE: return "TYPE";
-                case VAR: return "VAR";
 
                 case PLUS: return "PLUS";
                 case PLUSEQ: return "PLUSEQ";
@@ -52,6 +50,15 @@ const char *token_type_to_string(enum token_type type) {
                 case LT: return "LT";
                 case LTEQ: return "LTEQ";
 
+                case SHR: return "SHR";
+                case SHREQ: return "SHREQ";
+                case USHR: return "USHR";
+                case USHREQ: return "USHREQ";
+                case SHL: return "SHL";
+                case SHLEQ: return "SHLEQ";
+                case USHL: return "USHL";
+                case USHLEQ: return "USHLEQ";
+
                 case AND: return "AND";
                 case OR: return "OR";
                 case NOT: return "NOT";
@@ -59,7 +66,7 @@ const char *token_type_to_string(enum token_type type) {
                 case AMP: return "AMP";
                 case AMPEQ: return "AMPEQ";
                 case PIPE: return "PIPE";
-                case PIPEQ: return "PIPEQ";
+                case PIPEEQ: return "PIPEEQ";
                 case TILDA: return "TILDA";
                 case TILDAEQ: return "TILDAEQ";
                 case XOR: return "XOR";
@@ -87,6 +94,6 @@ const char *token_type_to_string(enum token_type type) {
                 case LBRACE: return "LBRACE";
                 case RBRACE: return "RBRACE";
 
-                case EOF: return "EOF";
+                case _EOF: return "EOF";
         }
 }
